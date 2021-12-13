@@ -8,13 +8,13 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                sh "bash jenkins/setup.sh"
+                sh "bash Jenkins/setup.sh"
                 //
             }
         }
         stage('Test') {
             steps {
-                sh "bash jenkins/test.sh"
+                sh "bash Jenkins/test.sh"
                 //
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script{ 
                     if (env.CREATE_SCHEMA == "true") {
-                        sh "bash jenkins/create_schema.sh"
+                        sh "bash Jenkins/create_schema.sh"
                         
                     }
                 }
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 script{
                     if (env.CREATE_SCHEMA == "true") {
-                        sh "bash jenkins/run_app.sh"
+                        sh "bash Jenkins/run_app.sh"
                         
                      }
                  }
