@@ -20,23 +20,28 @@ pipeline {
         }
         stage('Create Schema') {
             steps {
-                script[{ 
+                script{ 
                     if (env.CREATE_SCHEMA == "true") {
                         sh "bash jenkins/create_schema.sh"
                         
-        
+                    }
+                }
             }
-            }
+        }
         stage('Run') {
             steps {
-                script[
+                script{
                     if (env.CREATE_SCHEMA == "true") {
                         sh "bash jenkins/run_app.sh"
                         
+                     }
+                 }
             }
         }
+    }
     post{
         always {
         junit 'junit_report.xml'
         # cobertura
     }}
+}
