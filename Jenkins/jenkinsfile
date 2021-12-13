@@ -42,6 +42,6 @@ pipeline {
     post{
         always {
         junit 'junit_report.xml'
-        cobertura
+        // cobertura
     }}
 }

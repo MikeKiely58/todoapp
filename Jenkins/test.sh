@@ -5,4 +5,4 @@ python3 -m pytest \
     --cov=applicaton \
     --cov-report= term-missing \
     --cov-report xml:coverage.xml \
-    --junit.xml=junit_report.xml
+    --junit-xml=junit_report.xml
